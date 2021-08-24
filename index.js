@@ -8,6 +8,12 @@ app.get("/", (req, res) => {
 	res.sendFile(__dirname + "/index.html");
 });
 
-server.listen("443", () => {
+const expressServer = server.listen("443", () => {
 	console.log("Listening on :443");
+});
+
+process.on("SIGTERM", () => {
+	expressServer.close((err) => {
+		process.exit(err ? 1 : 0);
+	});
 });
