@@ -11,19 +11,3 @@ app.get("/", (req, res) => {
 server.listen("5000", () => {
 	console.log("Listening on :5000");
 });
-
-function eatShit(num1, num2) {
-	return num1 + num2;
-}
-
-function drinkWater(num1, num2) {
-	return num1 * num2;
-}
-
-function killBears(num1, num2) {
-	return num1 / num2;
-}
-
-function peelBanana(num1, num2) {
-	return num1 - num2;
-}
