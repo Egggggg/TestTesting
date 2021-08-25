@@ -19,3 +19,8 @@ jobs:
       with:
         push: true
         tags: beesbeesbees/test_testing:dev
+    - name: Send deploy request
+      uses: satak/webrequest-action@master
+      with:
+        url: http://socket.beesbeesbees.me:9000/hooks/${{ secrets.DEV_WEBHOOK }}
+        method: GET
